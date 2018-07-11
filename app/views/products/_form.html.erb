@@ -1,0 +1,48 @@
+
+<%= form_for(product) do |f| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="py-5 text-center">
+    <div class = "from-group">
+    <%=f.label :latitude%>
+    <%=f.text_field :latitude, :html => {:id => "lat"} %>
+    </div>
+    <div class = "from-group">
+    <%=f.label :longitude%>
+    <%=f.text_field :longitude%>
+    </div>
+  <div class = "from-group">
+    <%=f.label :area_type%>
+    <%=f.text_field :area_type,id: "lat" ,class: "form-control"%>
+  </div>
+  <div class = "from-group">
+    <%=f.label :area_name%>
+    <%=f.text_field :area_name, class: "form-control"%>
+  </div>
+  <div class = "from-group">
+    <%=f.label :address%>
+    <%=f.text_field :address, class: "form-control"%>
+  </div>
+  <div class = "from-group">
+    <%=f.label :description%>
+    <%=f.text_field :description, class: "form-control"%>
+  </div>
+  <div class = "from-group">
+    <%=f.label :image_address%>
+    <%=f.file_field :image_address, class: "form-control"%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</div>
+<% end %>
+

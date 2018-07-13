@@ -14,12 +14,13 @@
 <%@products.each do |product|%>
 <div class="card col-md-3">
   <img class="card-img-top" src="<%= product.image_address.thumb.url%>">
-  <div class="card-body">
+  <div class="card-body text-center">
     <h5 class="card-title" data_id=1><span><%=product.area_type%></span></h5>
-    <p class="card-text">장소:<%=product.area_name%></p>
-    <p class="card-text">위도:<%=product.latitude%>  경도:<%=product.longitude%></p>
-    <p class="card-text">내용:<%=product.address%></p>
-    <%= link_to '영화 정보보기', product_path(product), class: "btn btn-primary"%>
+    <p class="card-text">장소:<%=product.area_name%></p><br/>
+    위도<p class="card-text"><%=product.latitude%></p><br/>
+    경도<p class="card-text"><%=product.longitude%></p><br/>
+    내용<p class="card-text"><%=product.address%></p>
+    <%= link_to '정보보기', product_path(product), class: "btn btn-primary"%>
   </div>
 </div>
 <%end%>

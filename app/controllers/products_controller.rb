@@ -61,9 +61,6 @@ class ProductsController < ApplicationController
   end
   
   def new_map
-
-          session[:map_lat] = params[:lat]
-          session[:map_lng] = params[:lng]
   end
   def create_map
         u1 = Product.new

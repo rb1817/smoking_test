@@ -11,37 +11,38 @@
       </ul>
     </div>
   <% end %>
-<div class="py-5 text-center">
-    <div class = "from-group">
-    <%=f.label :latitude%>
-    <%=f.text_field :latitude, :html => {:id => "lat"} %>
-    </div>
-    <div class = "from-group">
-    <%=f.label :longitude%>
-    <%=f.text_field :longitude%>
-    </div>
-  <div class = "from-group">
-    <%=f.label :area_type%>
-    <%=f.text_field :area_type,id: "lat" ,class: "form-control"%>
+<div class="py-4 text-center">
+  <div class = "from-group mx-auto" style="width:200px">
+    <%=f.label :latitude%><br/>
+    <%=f.text_field :latitude, id: 'lat' ,class: "form-control"%>
   </div>
-  <div class = "from-group">
-    <%=f.label :area_name%>
-    <%=f.text_field :area_name, class: "form-control"%>
+  <div class = "from-group mx-auto" style="width:200px">
+    <%=f.label :longitude%><br/>
+    <%=f.text_field :longitude, id: 'lng' ,class: "form-control"%>
   </div>
-  <div class = "from-group">
-    <%=f.label :address%>
-    <%=f.text_field :address, class: "form-control"%>
+  <div class = "from-group col-md-6 mx-auto">
+    <%=f.label :area_type%><br/>
+    <%= f.select :area_type, options_for_select([["흡연구역", "흡연구역"],["단속구역", "단속구역"]]), :class => 'genForm_dropBox' %>
   </div>
-  <div class = "from-group">
-    <%=f.label :description%>
-    <%=f.text_field :description, class: "form-control"%>
+  <div class = "from-group col-md-6 mx-auto">
+    <%=f.label :area_name%><br/>
+    <%=f.text_field :area_name,class: "form-control"%>
   </div>
-  <div class = "from-group">
-    <%=f.label :image_address%>
-    <%=f.file_field :image_address, class: "form-control"%>
+  <div class = "from-group col-md-6 mx-auto">
+    <%=f.label :address%><br/>
+    <%=f.text_field :address,class: "form-control"%>
   </div>
+  <div class = "from-group col-md-6 mx-auto">
+    <%=f.label :description%><br/>
+    <%=f.text_field :description,class: "form-control"%>
+  </div>
+  <div class = "from-group col-md-3 mx-auto">
+    <%=f.label :image_address%><br/>
+    <%=f.file_field :image_address,class: "form-control"%>
+  </div>
+  <br/>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "등록하기",class: 'btn btn-primary'%>
   </div>
 </div>
 <% end %>

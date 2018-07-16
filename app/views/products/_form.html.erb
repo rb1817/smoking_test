@@ -12,6 +12,7 @@
     </div>
   <% end %>
 <div class="py-4 text-center">
+  <fieldset disabled>
   <div class = "from-group mx-auto" style="width:200px">
     <%=f.label :latitude%><br/>
     <%=f.text_field :latitude, id: 'lat' ,class: "form-control"%>
@@ -20,6 +21,7 @@
     <%=f.label :longitude%><br/>
     <%=f.text_field :longitude, id: 'lng' ,class: "form-control"%>
   </div>
+  </fieldset>
   <div class = "from-group col-md-6 mx-auto">
     <%=f.label :area_type%><br/>
     <%= f.select :area_type, options_for_select([["흡연구역", "흡연구역"],["단속구역", "단속구역"]]), :class => 'genForm_dropBox' %>
